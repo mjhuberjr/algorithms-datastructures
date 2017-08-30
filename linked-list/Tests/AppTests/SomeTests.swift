@@ -3,17 +3,32 @@ import XCTest
 @testable import App
 
 class SomeTests: XCTestCase {
+    
     override func setUp() { }
-    func testSomething() {
-        let person = Person(name: "Mike")
-        XCTAssertEqual("Mike", person.name, "This test failed because the values are not equal")
+    
+    func testHeadWithSingleNodeUsingAddValue() {
+        let linkedList = LinkedList<Int>()
+        linkedList.addFirst(value: 131)
+        XCTAssertEqual(131, linkedList.head?.value, "This test failed because the head is not the correct value.")
+        XCTAssertEqual(131, linkedList.tail?.value, "This test failed because the tail is not the correct value.")
     }
+    
+    func testHeadWithSingleNodeUsingAddNode() {
+        let linkedList = LinkedList<Int>()
+        let node = Node(value: 131)
+        linkedList.addFirst(node: node)
+        XCTAssertEqual(131, linkedList.head?.value, "This test failed because the head is not the correct value.")
+        XCTAssertEqual(131, linkedList.tail?.value, "This test failed because the tail is not the correct value.")
+    }
+    
 }
 
+/*
 extension SomeTests {
-    
+
     static let allTests = [
-        ("testSomething", testSomething)
+        // Tests for Linux implementation.
     ]
     
 }
+ */
