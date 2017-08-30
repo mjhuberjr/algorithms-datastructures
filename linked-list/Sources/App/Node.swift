@@ -1,6 +1,6 @@
 import Foundation
 
-public class Node<T> {
+public class Node<T: Equatable> {
     
     public var value: T
     public var next: Node?

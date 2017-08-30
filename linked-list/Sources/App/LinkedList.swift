@@ -1,6 +1,6 @@
 import Foundation
 
-public class LinkedList<T> {
+public class LinkedList<T: Equatable> {
     
     // MARK: - Properties
     
@@ -19,7 +19,6 @@ public class LinkedList<T> {
             return 0
         }
     }
-
     
     public init() { }
     
@@ -85,6 +84,19 @@ public class LinkedList<T> {
                 }
             }
         }
+    }
+    
+    // MARK: - Contains
+    
+    public func contains(value: T) -> Bool {
+        var current = head
+        while current != nil {
+            if current?.value == value {
+                return true
+            }
+            current = current?.next
+        }
+        return false
     }
     
 }

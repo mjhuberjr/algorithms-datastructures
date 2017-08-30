@@ -60,6 +60,14 @@ class SomeTests: XCTestCase {
         XCTAssertEqual(13, linkedList.tail?.value, "This test failed because the tail is not the correct value.")
     }
     
+    func testLinkedListContainsValue() {
+        let linkedList = LinkedList<Int>()
+        linkedList.addFirst(value: 13)
+        linkedList.addLast(value: 1)
+        linkedList.addFirst(value: 131)
+        XCTAssert(linkedList.contains(value: 131))
+    }
+    
 }
 
 /*
