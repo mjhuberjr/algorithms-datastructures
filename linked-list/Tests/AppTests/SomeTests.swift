@@ -42,6 +42,24 @@ class SomeTests: XCTestCase {
         XCTAssertEqual(1, linkedList.tail?.value, "This test failed because the tail is not the correct value.")
     }
     
+    func testHeadAndTailWithTwoNodesAfterRemovingFirst() {
+        let linkedList = LinkedList<Int>()
+        linkedList.addFirst(value: 13)
+        linkedList.addLast(value: 1)
+        linkedList.removeFirst()
+        XCTAssertEqual(1, linkedList.head?.value, "This test failed because the head is not the correct value.")
+        XCTAssertNil(linkedList.tail)
+    }
+    
+    func testHeadAndTailWithTwoNodesAfterRemovingLast() {
+        let linkedList = LinkedList<Int>()
+        linkedList.addFirst(value: 13)
+        linkedList.addLast(value: 1)
+        linkedList.removeLast()
+        XCTAssertEqual(13, linkedList.head?.value, "This test failed because the head is not the correct value.")
+        XCTAssertEqual(13, linkedList.tail?.value, "This test failed because the tail is not the correct value.")
+    }
+    
 }
 
 /*
